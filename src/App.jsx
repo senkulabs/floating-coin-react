@@ -8,6 +8,7 @@ const CHOCOLATE_COST = 9
 function App() {
   const [numOfCoins, setNumOfCoins] = useState(0)
   const [numOfChocolate, setNumOfChocolate] = useState(0)
+  const [floatingTextKey, setFloatingTextKey] = useState('initial');
 
   function buyChocolate() {
     setNumOfCoins(numOfCoins - CHOCOLATE_COST);
@@ -16,14 +17,15 @@ function App() {
 
   function handleNumOfCoins () {
     setNumOfCoins(numOfCoins + 2); 
+    setFloatingTextKey(crypto.randomUUID());
   }
 
   return (
     <div className={styles.wrapper}>
       <main>
         <Coin handleNumOfCoins={handleNumOfCoins} />
-        { numOfCoins > 0 && <div className={styles.floatingNumWrapper}>
-          <FloatingText key={numOfCoins}>
+        { floatingTextKey !== 'initial' && <div className={styles.floatingNumWrapper}>
+          <FloatingText key={floatingTextKey}>
             +2
           </FloatingText>
         </div> }
