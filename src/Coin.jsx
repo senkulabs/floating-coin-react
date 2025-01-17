@@ -1,11 +1,11 @@
-import './Coin.css';
+import styles from './Coin.module.css';
 
 function Coin({ handleNumOfCoins }) {
     return (
-        <div className="coin-wrapper">
-          <button className="coin" onClick={handleNumOfCoins}>
+        <div className={styles.coinWrapper}>
+          <button className={styles.coin} onClick={handleNumOfCoins}>
             <span className="visually-hidden">Add 2 coin</span>
-            <img className="coin-image" alt="" src="https://sandpack-bundler.vercel.app/img/toonie.png" />
+            <img className={styles.coinImage} alt="" src="https://sandpack-bundler.vercel.app/img/toonie.png" />
           </button>
         </div>
     )

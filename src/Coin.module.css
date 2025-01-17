@@ -18,7 +18,7 @@
     transition: transform 0ms;
 }
 
-.coin-image {
+.coinImage {
     display: block;
     width: 100%;
     user-select: none;
