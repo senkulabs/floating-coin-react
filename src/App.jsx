@@ -10,8 +10,8 @@ function App() {
   const [numOfChocolate, setNumOfChocolate] = useState(0)
 
   function buyChocolate() {
-    // setNumOfCoins(numOfCoins - CHOCOLATE_COST);
-    // setNumOfChocolate(numOfChocolate + 1);
+    setNumOfCoins(numOfCoins - CHOCOLATE_COST);
+    setNumOfChocolate(numOfChocolate + 1);
   }
 
   function handleNumOfCoins () {
