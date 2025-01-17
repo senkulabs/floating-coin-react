@@ -34,21 +34,6 @@ html, body, #root {
   flex-direction: column;
 }
 
-main {
-  flex: 1;
-  display: grid;
-  place-content: center;
-}
-
-footer {
-  display: flex;
-  justify-content: center;
-  gap: 8px;
-  padding: 16px;
-  font-size: 1.25rem;
-  font-weight: 400;
-}
-
 .visually-hidden {
   clip: rect(0 0 0 0);
   clip-path: inset(50%);
