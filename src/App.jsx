@@ -7,11 +7,11 @@ const CHOCOLATE_COST = 9
 
 function App() {
   const [numOfCoins, setNumOfCoins] = useState(0)
-  const [numOfChocolate, setNumOfChocolate] = useState(0)
+  const [numOfChocolates, setNumOfChocolates] = useState(0)
 
   function buyChocolate() {
     setNumOfCoins(numOfCoins - CHOCOLATE_COST);
-    setNumOfChocolate(numOfChocolate + 1);
+    setNumOfChocolates(numOfChocolates + 1);
   }
 
   function handleNumOfCoins () {
@@ -29,7 +29,7 @@ function App() {
         </div> }
         <button disabled={numOfCoins < CHOCOLATE_COST} className={styles.shopItem}
         onClick={buyChocolate}>
-          Buy chocolate {numOfChocolate > 0 && (`(${numOfChocolate})`)}
+          Buy chocolate {numOfChocolates > 0 && (`(${numOfChocolates})`)}
         </button>
       </main>
       <footer>
