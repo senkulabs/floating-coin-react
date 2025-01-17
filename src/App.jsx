@@ -9,6 +9,11 @@ function App() {
   const [numOfCoins, setNumOfCoins] = useState(0)
   const [numOfChocolates, setNumOfChocolates] = useState(0)
 
+  // Derived value
+  // We calculate how much coin user has wasted by
+  // adding the value of number of chocolates to their current coin balance:
+  const totalCoinsWasted = numOfCoins + numOfChocolates * CHOCOLATE_COST;
+
   function buyChocolate() {
     setNumOfCoins(numOfCoins - CHOCOLATE_COST);
     setNumOfChocolates(numOfChocolates + 1);
@@ -22,8 +27,8 @@ function App() {
     <div className={styles.wrapper}>
       <main>
         <Coin handleNumOfCoins={handleNumOfCoins} />
-        { numOfCoins > 0 && <div className={styles.floatingNumWrapper}>
-          <FloatingText key={numOfCoins}>
+        { totalCoinsWasted > 0 && <div className={styles.floatingNumWrapper}>
+          <FloatingText key={totalCoinsWasted}>
             +2
           </FloatingText>
         </div> }
