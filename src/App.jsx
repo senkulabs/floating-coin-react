@@ -1,18 +1,17 @@
 import { useState } from 'react'
-import './Coin.css'
+import Coin from './Coin'
 
 function App() {
   const [numOfCoins, setNumOfCoins] = useState(0)
 
+  function handleNumOfCoins () {
+    setNumOfCoins(numOfCoins + 2); 
+  }
+
   return (
     <div className="wrapper">
       <main>
-        <div className="coin-wrapper">
-          <button className="coin" onClick={() => setNumOfCoins(numOfCoins + 2)}>
-            <span className="visually-hidden">Add 2 coin</span>
-            <img className="coin-image" alt="" src="https://sandpack-bundler.vercel.app/img/toonie.png" />
-          </button>
-        </div>
+        <Coin handleNumOfCoins={handleNumOfCoins} />
       </main>
       <footer>
         Your coin balance:
